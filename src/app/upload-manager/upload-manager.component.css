@@ -1,0 +1,20 @@
+.dropzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: 200;
+    width: 300px;
+    height: 300px;
+    border: 10px dashed ;
+    border-radius: 8px;
+    background: #EEECF1;
+    /* color: rgb(8, 73, 16); */
+    border-color:#D9DADB;
+}
+
+.dropzone.hovering {
+    background: #F5E1FD;
+    border: 10px dashed ;
+    border-color:#EEECF1;
+}

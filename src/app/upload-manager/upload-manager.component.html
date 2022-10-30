@@ -1,0 +1,26 @@
+<div class="dropzone" dropzone (hovered)="toggleHover($event)" (dropped)="onDrop($event)" [class.hovering]="isHovering">
+
+    <h3> อัพโหลดรูปภาพของคุณ</h3>
+
+    <div>
+        <!-- <label>
+            <input type="file" (change)="onDrop($event.target.files)">
+        </label> -->
+    </div>
+</div>
+
+<div *ngIf="files.length > 0">
+    รายการอัพโหลด
+    <hr>
+</div>
+
+<div *ngFor="let file of files" >
+    
+    <app-card [file]="file"></app-card>
+    <button mat-fab color="warn" (click)="removeFile()" [disabled]="toggleUpload" >ลบภาพ</button>
+    <button mat-fab color="primary" (click)="toggleUpload=true" >upload</button>
+    <!-- <button mat-fab color="accent" (click)="rotate" >rotate</button> -->
+    <upload-task *ngIf="toggleUpload" [file]="file" (isUploadFinish)="toggleUpload=false"></upload-task>
+    
+    
+</div>
